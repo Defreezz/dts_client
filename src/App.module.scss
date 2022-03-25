@@ -1,0 +1,54 @@
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #0a192a;
+
+  .container {
+    border-radius: 12px;
+    background-color: #132f4c;
+    width: 400px;
+
+    .cardNumber {
+      //width: 80%;
+    }
+
+    .expContainer {
+      display: flex;
+
+      .exp {
+        width: 80px;
+        margin-right: 0;
+      }
+
+    }
+
+    .cvv {
+      width: 80px;
+    }
+.amountButton{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .amount {
+    width: 90px;
+  }
+  .button{
+    margin: 10px;
+  }
+}
+
+  }
+  .response{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+    margin-top: 20px;
+    color: white;
+
+  }
+}
