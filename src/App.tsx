@@ -6,20 +6,21 @@ import {BodyType, dstAPI} from "./api";
 
 
 function App() {
+
     const {handleCardNumberChange, cardNumber} = useSetCardNumber()
     const {handleExpMonthChange, month} = useSetMonth()
     const {handleExpYearChange, year} = useSetYear()
     const {handleCvvChange, cvv} = useSetCvv()
     const {handleAmountChange, amount} = useSetAmount()
 
-    const isDisable = cardNumber.toString().length < 16 || month <= 0 || year <= 0 || cvv <= 0 || amount <= 0
-
     const [response, setResponse] = useState<{ RequestId: string, Amount: number }>({RequestId: ' ', Amount: 0})
-
     const handlePayClick = async () => {
         const res = await dstAPI.toPay({cardNumber, cvv, amount, expDate:`${month}/${year}` } as BodyType)
         setResponse({...res})
     }
+
+    const isDisable = cardNumber.toString().length < 16 || month <= 0 || year <= 0 || cvv <= 0 || amount <= 0
+
     return (
         <Box className={s.app}>
             <Paper
